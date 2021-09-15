@@ -1,5 +1,5 @@
 class Admin::CategoriesController < ApplicationController
-
+  
   def index
     @categories = Category.order(id: :desc).all
   end
@@ -16,12 +16,6 @@ class Admin::CategoriesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def destroy
-    @category = Category.find params[:id]
-    @category.destroy
-    redirect_to [:admin, :categories], notice: 'category deleted!'
   end
 
   private
