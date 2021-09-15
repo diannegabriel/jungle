@@ -1,29 +1,30 @@
 <h1>Admin &raquo; Dashboard</h1>
 
-<div class="panel panel-default products">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Sorted by</th>
-          <th>Quantity</th>
-          <th>Link</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>Products</th>
-          <th><%= @product_count %></th>
-          <th><%= link_to "Product Index", '/admin/products' %> </th>
-        </tr>
-        <tr>
-          <th>Categories</th>
-          <th><%= @category_count %></th>
-          <th>
-            <% Category.all.each do |category| %>
-              <li><%= link_to category.name, category %></li>
-            <% end %>
-          </th>
-        </tr>
-      </tbody>
-    </table>
-  </div> 
+<div class="panel panel-default">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Sorted by</th>
+        <th>Quantity</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Products</th>
+        <th><%= @product_count %></th>
+        <th><%= link_to "Product Index", '/admin/products' %> </th>
+      </tr>
+      
+      <tr>
+        <th>Categories</th>
+        <th><%= @category_count %></th>
+        <th>
+          <% Category.all.each do |category| %>
+            <li><%= link_to category.name, category %></li>
+          <% end %>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div> 
