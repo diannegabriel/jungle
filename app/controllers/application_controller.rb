@@ -38,4 +38,8 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_user
   end
 
+  def sale
+    @sales = Sale.all
+  end
+
 end
