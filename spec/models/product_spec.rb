@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
-
   describe 'Validations' do
     it 'should save when all fields are filled' do
       @category = Category.new(name: 'Gadgets')
