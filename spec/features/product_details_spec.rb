@@ -16,11 +16,15 @@ RSpec.feature "Visitor clicks on a product in home page", type: :feature, js: tr
     end
   end
 
-  scenario "They see product details page" do
-    visit '/'
+  scenario "They see a product" do
+    visit root_path
+    first('.product-image').click
 
-    find(".product:nth-of-type(1) img").click
+    # DEBUG / VERIFY
+    sleep 5
+    save_screenshot
 
+    expect(page).to have_css 'article.product-detail'
     expect(page).to have_content("Description")
     expect(page).to have_content("Quantity")
   end
